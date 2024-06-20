@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 app.get('/', function (req, res) {
-  res.send('My Dev Web Node Frontend v1.3');
+  res.send('My Dev Web Node Frontend v1.4');
 });
 app.listen(3000, function () {
   console.log('App listening on port 3000!');
