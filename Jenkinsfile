@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'docker_cloud'
+    }
+
+  }
   stages {
     stage('Checkout Code') {
       steps {
@@ -21,6 +26,12 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('Docker build') {
+      steps {
+        sh 'docker build -f frontend/Dockerfile .'
       }
     }
 
