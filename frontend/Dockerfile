@@ -1,11 +1,7 @@
-FROM node:lts-alpine
+FROM node:alpine3.20
 WORKDIR /usr/src/app
-COPY frontend/package*.json ./
-RUN ls -l
+COPY package*.json ./
 RUN npm install
-COPY frontend ./
-RUN ls -l
-RUN npm run build
-WORKDIR /usr/src/app/dist
+COPY . .
 EXPOSE 3000
 CMD [ "node", "app.js" ]

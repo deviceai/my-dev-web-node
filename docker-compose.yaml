@@ -1,0 +1,12 @@
+version: '3.8'
+volumes:
+  my_dev_web_node_frontend_workdir:
+services:
+  frontend:
+    image: deviceai5554/my-dev-web-node-frontent:1.0
+    volumes:
+         - my_dev_web_node_frontend_workdir:/usr/src/app
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
