@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'docker_cloud'
+    }
+
+  }
   stages {
     stage('Checkout Code') {
       steps {
