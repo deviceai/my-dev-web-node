@@ -15,9 +15,9 @@ pipeline {
           }
         }
 
-        stage('Frontend npm i') {
+        stage('cd frontend') {
           steps {
-            sh 'cd frontend && npm i'
+            sh 'cd frontend'
           }
         }
 
